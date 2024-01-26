@@ -104,6 +104,8 @@ const remove = async (req, res) => {
   try {
     const artistRemoved = await Artist.findByIdAndDelete(artistId);
     const albumRemoved = await Album.find({ artist: artistId }).remove();
+
+    
     const songRemoved = await Song.find({ album: albumRemoved._id }).remove();
 
     if (!artistRemoved) {

@@ -19,6 +19,8 @@ const createToken = (user) => {
   return jwt.encode(payload, secret);
 };
 
+
+
 module.exports = {
   secret,
   createToken,
